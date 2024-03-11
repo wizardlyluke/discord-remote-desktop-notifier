@@ -58,12 +58,11 @@ Upon starting, the script activates the Discord bot, which not only updates its 
 
 ## Project Structure
 
-- `config.json`: Configuration file for the Discord bot token, status message, and check interval.
 - `requirements.txt`: File listing the necessary Python packages.
 - `discord_bot.py`: Script for Discord bot operations.
 - `rdp_session_detector.py`: Script to detect active RDP sessions.
 - `main.py`: Main script that orchestrates the bot and RDP session detection.
-- `.env`: Environment variables for Discord bot token and channel ID.
+- `.env`: Environment variables for Discord bot token and channel ID. Use the .env.example for reference.
 - `README.md`: This file, containing project documentation.
 - `build.bat`: Run this to get a self contained exe file.
 
