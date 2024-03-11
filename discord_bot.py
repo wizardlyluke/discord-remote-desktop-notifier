@@ -20,6 +20,8 @@ env_path = os.path.join(application_path, '.env')
 load_dotenv(env_path)
 logging.basicConfig(level=logging.INFO)
 
+server_id = os.getenv('DISCORD_SERVER_ID')
+
 class DiscordBot(discord.Client):
     def __init__(self, *args, **kwargs):
         intents = discord.Intents.default()  # This enables the default intents
@@ -48,7 +50,7 @@ class DiscordBot(discord.Client):
                 if not self.voice_client or not self.voice_client.is_connected():
                     for guild in self.guilds:
                         for channel in guild.voice_channels:
-                            if channel.id == 1216756269298487336:
+                            if channel.id == server_id:
                                 self.voice_client = await channel.connect()
                                 logging.info(f'Joined voice channel: {channel.name}')
                                 break
