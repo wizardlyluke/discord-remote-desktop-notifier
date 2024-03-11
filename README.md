@@ -21,7 +21,7 @@ These instructions will get you a copy of the project up and running on your loc
 pip install -r requirements.txt
 ```
 
-3. Create a `.env` file in the root directory of the project with the following content, replacing the placeholders with your actual data:
+3. Create a `.env` file in the root directory of the project. Use the `.env.example` file as a template, replacing the placeholders with your actual data:
 
 ```plaintext
 # .env file for Discord Bot and RDP Session Detector Project
@@ -32,20 +32,19 @@ DISCORD_BOT_TOKEN=your_discord_bot_token_here
 # The ID of the Discord channel where the bot will update its status
 DISCORD_CHANNEL_ID=your_discord_channel_id_here
 
+# Status message to display when remoting in
+DISCORD_STATUS_MESSAGE=your_status_message_here
+
+# Interval in seconds for checking the RDP session
+DISCORD_PING_INTERVAL_SECONDS=your_ping_interval_seconds_here
+
+# The ID of the Discord server where the bot is active
+DISCORD_SERVER_ID=your_discord_server_id_here
+
 # Windows 11 Remote Desktop Session Information (Optional)
 RDP_USERNAME=your_rdp_username_here
 RDP_MACHINE_NAME=your_windows_11_machine_name_here
-```
 
-4. Update the `config.json` file with your Discord bot token and preferred status message (optional if you've set everything in the `.env` file):
-
-```json
-{
-  "discord_bot_token": "YOUR_DISCORD_BOT_TOKEN_HERE",
-  "status_message": "Remoting In",
-  "check_interval_seconds": 10
-}
-```
 
 ### Running the Project
 
@@ -55,7 +54,7 @@ To run the project, execute the `main.py` script:
 python main.py
 ```
 
-The script will start, and the Discord bot will update its status to "Remoting In" whenever a Remote Desktop session is active on the specified Windows 11 machine.
+Upon starting, the script activates the Discord bot, which not only updates its status to "Remoting In" but also joins a voice channel whenever a Remote Desktop session is detected on the specified Windows 11 machine.
 
 ## Project Structure
 
@@ -66,6 +65,7 @@ The script will start, and the Discord bot will update its status to "Remoting I
 - `main.py`: Main script that orchestrates the bot and RDP session detection.
 - `.env`: Environment variables for Discord bot token and channel ID.
 - `README.md`: This file, containing project documentation.
+- `build.bat`: Run this to get a self contained exe file.
 
 ## Contributing
 
