@@ -42,7 +42,7 @@ class DiscordBot(discord.Client):
     async def manage_status_and_voice_channel_task(self):
         try:
             # Check if a user is logged in via RDP
-            if is_user_remoting() == False:
+            if is_user_remoting():
                 logging.info('User is remoting in, updating the bot status message and joining the voice channel if not already connected.')
                 # If a user is remoting in, update the bot's status message
                 await self.change_presence(activity=discord.Game(name=self.status_message))

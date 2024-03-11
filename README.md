@@ -1,4 +1,4 @@
-# Discord Bot RDP Session Status Updater
+# Discord Bot RDP Session Status Notifier
 
 This project is designed to update a Discord bot's status to "Remoting In" whenever a user is logged in via Remote Desktop on a Windows 11 machine. It checks for active RDP sessions at regular intervals and updates the bot's status accordingly.
 
