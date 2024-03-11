@@ -20,7 +20,7 @@ env_path = os.path.join(application_path, '.env')
 load_dotenv(env_path)
 logging.basicConfig(level=logging.INFO)
 
-server_id = os.getenv('DISCORD_SERVER_ID')
+server_id = int(os.getenv('DISCORD_SERVER_ID', '0'))
 
 class DiscordBot(discord.Client):
     def __init__(self, *args, **kwargs):
